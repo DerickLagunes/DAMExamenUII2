@@ -1,4 +1,4 @@
-package mx.edu.utez.calculadoramvvm.ui.components.images
+package mx.edu.utez.examenuii.ui.components.images
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image

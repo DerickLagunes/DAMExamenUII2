@@ -1,9 +1,5 @@
-package mx.edu.utez.calculadoramvvm.ui.screens
+package mx.edu.utez.examenuii.ui.screens
 
-import PrimaryButton
-import Title
-import UserInputField
-import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -11,22 +7,21 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.SearchBarDefaults.InputField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
-import mx.edu.utez.calculadoramvvm.R
-import mx.edu.utez.calculadoramvvm.ui.components.images.CircularImage
-import mx.edu.utez.calculadoramvvm.ui.components.texts.Link
-import mx.edu.utez.calculadoramvvm.ui.components.inputs.PasswordField
-import mx.edu.utez.calculadoramvvm.ui.theme.CalculadoraMVVMTheme
-import mx.edu.utez.gato.viewmodel.LoginViewModel
+import mx.edu.utez.examenuii.R
+import mx.edu.utez.examenuii.ui.components.images.CircularImage
+import mx.edu.utez.examenuii.ui.components.texts.Link
+import mx.edu.utez.examenuii.ui.components.inputs.PasswordField
+import mx.edu.utez.examenuii.ui.components.buttons.PrimaryButton
+import mx.edu.utez.examenuii.ui.components.inputs.UserInputField
+import mx.edu.utez.examenuii.ui.components.texts.Title
+import mx.edu.utez.examenuii.viewmodel.LoginViewModel
 
 @Composable
 fun LoginScreen(viewModel: LoginViewModel, navController: NavController) {
@@ -65,32 +60,12 @@ fun LoginScreen(viewModel: LoginViewModel, navController: NavController) {
         }
 
         PrimaryButton("Iniciar sesión") {
-            viewModel.login {
-                navController.navigate("calculator") {
-                    popUpTo("login") { inclusive = true } // Evita volver al login
-                }
-            }
+            viewModel.login(navController)
         }
 
         Link("¿No tienes cuenta? Regístrate") {
             navController.navigate("register")
         }
 
-    }
-}
-
-
-@SuppressLint("ViewModelConstructorInComposable")
-@Preview(showBackground = true)
-@Composable
-fun PreviewLoginScreen() {
-    CalculadoraMVVMTheme {
-        val navController = rememberNavController()
-        val viewModel = LoginViewModel()
-
-        LoginScreen(
-            viewModel = viewModel,
-            navController = navController
-        )
     }
 }

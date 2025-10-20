@@ -19,7 +19,6 @@ fun CalculatorButton(
         colors = ButtonDefaults.buttonColors(
             containerColor = Color(0xFF9C27B0)
         )
-
     ) {
         Text(text = text, style = MaterialTheme.typography.bodyLarge)
     }

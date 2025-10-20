@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
-import mx.edu.utez.gato.viewmodel.LoginViewModel
+import mx.edu.utez.examenuii.viewmodel.LoginViewModel
 
 @Composable
 fun UserInputField(

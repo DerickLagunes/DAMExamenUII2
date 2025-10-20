@@ -1,4 +1,4 @@
-package mx.edu.utez.calculadoramvvm.ui.components.texts
+package mx.edu.utez.examenuii.ui.components.texts
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text

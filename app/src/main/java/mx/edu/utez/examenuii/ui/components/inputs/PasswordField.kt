@@ -1,4 +1,4 @@
-package mx.edu.utez.calculadoramvvm.ui.components.inputs
+package mx.edu.utez.examenuii.ui.components.inputs
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardActions
@@ -11,7 +11,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import mx.edu.utez.gato.viewmodel.LoginViewModel
+import mx.edu.utez.examenuii.viewmodel.LoginViewModel
 
 
 @Composable

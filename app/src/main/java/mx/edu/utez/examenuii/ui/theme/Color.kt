@@ -1,4 +1,4 @@
-package mx.edu.utez.calculadoramvvm.ui.theme
+package mx.edu.utez.examenuii.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
