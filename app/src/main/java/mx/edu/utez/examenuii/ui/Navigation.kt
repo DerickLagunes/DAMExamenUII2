@@ -21,15 +21,11 @@ import mx.edu.utez.gato.viewmodel.LoginViewModel
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
-
     NavHost(navController = navController, startDestination = "incubadora") {
         composable("login") {
             val viewModel: LoginViewModel = viewModel() // instancia del ViewModel
             LoginScreen(viewModel = viewModel, navController = navController)
         }
-        composable("forgot_password") { ForgotPasswordScreen(navController) }
-        composable("register") { RegisterScreen(navController) }
-        composable("home") { HomeScreen(navController) }
         composable("calculator") {
             val viewModel: CalculatorViewModel = viewModel() // instancia del ViewModel
             CalculatorScreen(viewModel = viewModel, navController = navController)
@@ -45,5 +41,8 @@ fun Navigation() {
         composable("usuarios") {
             UserViewScreen(navController = navController)
         }
+        composable("forgot_password") { ForgotPasswordScreen(navController) }
+        composable("register") { RegisterScreen(navController) }
+        composable("home") { HomeScreen(navController) }
     }
 }
