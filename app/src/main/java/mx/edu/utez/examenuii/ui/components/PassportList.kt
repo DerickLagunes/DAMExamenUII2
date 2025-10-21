@@ -11,7 +11,7 @@ import mx.edu.utez.examenuii.data.model.Passport
 @Composable
 fun PassportList(lista: List<Passport>, x: (Passport) -> Unit) {
     LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(10.dp)
+        verticalArrangement = Arrangement.spacedBy(999.dp)
     ) {
         items(items = lista, key = {it.id} ) {passport ->
             PassportCard(passport,x)

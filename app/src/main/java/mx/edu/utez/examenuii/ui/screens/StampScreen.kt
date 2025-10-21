@@ -35,6 +35,7 @@ import mx.edu.utez.examenuii.data.model.Stamp
 import mx.edu.utez.examenuii.ui.components.texts.Title
 import mx.edu.utez.examenuii.viewmodel.PassportViewModel
 
+//Punto: Separa los componenetes individuales de este archivo en diferentes archivos dentro de UI
 @Composable
 fun StampScreen(viewModel: PassportViewModel, navController: NavController) {
     val passport by viewModel.selectedPassport.collectAsStateWithLifecycle()

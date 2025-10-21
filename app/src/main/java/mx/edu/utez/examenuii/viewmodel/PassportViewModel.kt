@@ -12,28 +12,11 @@ class PassportViewModel: ViewModel() {
 
     val _passports = MutableStateFlow<List<Passport>>(emptyList())
     val passports: StateFlow<List<Passport>> = _passports
-
-    // Un StateFlow para guardar el pasaporte en el que se hizo click
     private val _selectedPassport = MutableStateFlow<Passport?>(null)
     val selectedPassport: StateFlow<Passport?> = _selectedPassport
 
     init {
-        _passports.value = listOf(
-            Passport(
-                1,
-                R.drawable.utezlogo,
-                "Marlen",
-                "Gomez",
-                "marlen@gmail.com",
-                "7771836233",
-                0,
-                firma = R.drawable.firma_generica,
-                stamps = listOf(
-                    Stamp(1, "Mexico", R.drawable.mexico),
-                    Stamp(2, "Canadá", R.drawable.canada)
-                )
-            )
-        )
+        _passports.value = listOf()
     }
     fun clickPassport(passport: Passport){
         println("Has hecho click en: ${passport.nombres}")

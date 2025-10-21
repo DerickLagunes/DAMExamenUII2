@@ -32,7 +32,7 @@ import androidx.compose.ui.unit.sp
 import mx.edu.utez.examenuii.R
 import mx.edu.utez.examenuii.data.model.Passport
 
-
+//Punto: Separa los componentes individuales a archivos dentro de UI
 @Composable
 fun PassportCard(passport: Passport, x: (Passport) -> Unit, modifier: Modifier = Modifier) {
 
@@ -51,36 +51,27 @@ fun PassportCard(passport: Passport, x: (Passport) -> Unit, modifier: Modifier =
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
-            // --- 1. Encabezado ---
             PassportHeader()
-
             Spacer(modifier = Modifier.height(16.dp))
-
-            // --- 2. Contenido Principal (Foto y Datos) ---
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.Top
             ) {
-                // --- Columna Izquierda (Foto y Firma) ---
                 Column(
                     modifier = Modifier.weight(0.4f),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    // Foto
                     Image(
                         painter = painterResource(id = passport.foto),
                         contentDescription = "Foto de perfil",
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .aspectRatio(3f / 4f) // Proporción de foto de pasaporte
+                            .aspectRatio(3f / 4f)
                             .clip(RoundedCornerShape(8.dp))
                             .border(1.dp, Color.Gray, RoundedCornerShape(8.dp))
                     )
-
                     Spacer(modifier = Modifier.height(16.dp))
-
-                    // Firma
                     DataField(label = "Firma del Titular")
                     Image(
                         painter = painterResource(id = passport.firma),
@@ -92,10 +83,7 @@ fun PassportCard(passport: Passport, x: (Passport) -> Unit, modifier: Modifier =
                             .padding(horizontal = 8.dp)
                     )
                 }
-
                 Spacer(modifier = Modifier.width(16.dp))
-
-                // --- Columna Derecha (Datos) ---
                 Column(
                     modifier = Modifier.weight(0.6f)
                 ) {
@@ -107,26 +95,18 @@ fun PassportCard(passport: Passport, x: (Passport) -> Unit, modifier: Modifier =
                     DataField("Apellidos", passport.apellidos.uppercase())
                     DataField("Nombres", passport.nombres.uppercase())
                     DataField("Fecha de Nacimiento", passport.fechaNacimiento)
-                    DataField("Sexo", mapSex(passport.sexo))
+                    DataField("Sexo", if (passport.sexo == 0) "Mujer" else "Hombre")
                     DataField("Lugar de Nacimiento", passport.lugarNacimiento.uppercase())
                 }
             }
-
             Spacer(modifier = Modifier.height(16.dp))
             Divider(color = Color.Gray.copy(alpha = 0.5f))
             Spacer(modifier = Modifier.height(8.dp))
-
-            // --- 3. Zona de Código MRZ ---
             MRZText(text = passport.codigo)
         }
     }
 }
 
-// --- Componentes de Ayuda ---
-
-/**
- * Encabezado del pasaporte
- */
 @Composable
 private fun PassportHeader() {
     Row(
@@ -161,9 +141,6 @@ private fun PassportHeader() {
     }
 }
 
-/**
- * Campo de texto estandarizado (Etiqueta y Valor)
- */
 @Composable
 private fun DataField(
     label: String,
@@ -188,9 +165,7 @@ private fun DataField(
     }
 }
 
-/**
- * Texto especial para la zona de código MRZ
- */
+
 @Composable
 private fun MRZText(text: String) {
     Text(
@@ -202,14 +177,4 @@ private fun MRZText(text: String) {
         lineHeight = 16.sp,
         modifier = Modifier.fillMaxWidth()
     )
-}
-
-/**
- * Mapea el valor de 'sexo' a un String legible
- */
-private fun mapSex(sexo: Int): String = when (sexo) {
-    0 -> "HOMBRE"
-    1 -> "MUJER"
-    2 -> "X" // Estándar internacional
-    else -> "N/D"
 }

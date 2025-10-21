@@ -11,9 +11,9 @@ class LoginViewModel : ViewModel() {
     var loginError = mutableStateOf("")
 
     fun login(navController: NavController) {
-        if (username.value == "admin" && password.value == "123") {
+        if (username.value == "admin" && password.value == "123" && false) {
             loginError.value = ""
-            navController.navigate("passport") {
+            navController.navigate("home") {
                 popUpTo("login") { inclusive = true }
             }
         } else {

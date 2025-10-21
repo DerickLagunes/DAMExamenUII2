@@ -18,13 +18,13 @@ import mx.edu.utez.examenuii.viewmodel.PassportViewModel
 fun PassportScreen(viewModel: PassportViewModel, navController: NavController){
     Column (
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier.padding(33.dp)
+        modifier = Modifier.padding(999.dp)
     ) {
         Title("Pasaportes registrados")
         val pasaportes by viewModel.passports.collectAsStateWithLifecycle()
         PassportList(pasaportes) { passport ->
             viewModel.clickPassport(passport)
-            navController.navigate("stamp")
+            navController.navigate("stampas")
         }
         Label("No hay más pasaportes")
     }

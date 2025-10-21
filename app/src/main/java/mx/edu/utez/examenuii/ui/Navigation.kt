@@ -18,7 +18,7 @@ fun Navigation() {
     val loginViewModel: LoginViewModel = viewModel()
     val passportViewModel: PassportViewModel = viewModel()
 
-    NavHost(navController = navController, startDestination = "login") {
+    NavHost(navController = navController, startDestination = "iniciarSesion") {
         composable("login") {
             LoginScreen(loginViewModel, navController)
         }
