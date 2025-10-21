@@ -16,7 +16,9 @@ class PassportViewModel: ViewModel() {
     val selectedPassport: StateFlow<Passport?> = _selectedPassport
 
     init {
-        _passports.value = listOf()
+        _passports.value = listOf(
+            //Pasaportes
+        )
     }
     fun clickPassport(passport: Passport){
         println("Has hecho click en: ${passport.nombres}")
