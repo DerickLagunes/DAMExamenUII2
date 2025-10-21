@@ -7,20 +7,26 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import mx.edu.utez.examenuii.ui.screens.LoginScreen
 import mx.edu.utez.examenuii.ui.screens.PassportScreen
+import mx.edu.utez.examenuii.ui.screens.StampScreen
 import mx.edu.utez.examenuii.viewmodel.PassportViewModel
 import mx.edu.utez.examenuii.viewmodel.LoginViewModel
 
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "incubadora") {
+
+    val loginViewModel: LoginViewModel = viewModel()
+    val passportViewModel: PassportViewModel = viewModel()
+
+    NavHost(navController = navController, startDestination = "login") {
         composable("login") {
-            val viewModel: LoginViewModel = viewModel()
-            LoginScreen(viewModel, navController)
+            LoginScreen(loginViewModel, navController)
         }
         composable("passport") {
-            val viewModel: PassportViewModel = viewModel()
-            PassportScreen(viewModel, navController)
+            PassportScreen(passportViewModel, navController)
+        }
+        composable("stamp") {
+            StampScreen(passportViewModel, navController)
         }
     }
 }

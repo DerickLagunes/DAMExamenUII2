@@ -5,6 +5,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import mx.edu.utez.examenuii.data.model.Passport
 
 @Composable
@@ -13,7 +14,7 @@ fun PassportList(lista: List<Passport>, x: (Passport) -> Unit) {
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         items(items = lista, key = {it.id} ) {passport ->
-            PassportCard(passport) { x(passport) }
+            PassportCard(passport,x)
         }
     }
 }
