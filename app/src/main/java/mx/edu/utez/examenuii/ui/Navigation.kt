@@ -18,8 +18,11 @@ fun Navigation() {
     val loginViewModel: LoginViewModel = viewModel()
     val passportViewModel: PassportViewModel = viewModel()
 
-    NavHost(navController = navController, startDestination = "iniciarSesion") {
+    NavHost(navController = navController, startDestination = "login") {
         composable("login") {
+            throw Exception("Fallo la aplicación! ¿Por qué? " +
+                    "porque genere una excepción con throw, ¿Que hacer? " +
+                    "elimina la linea que genra la excepción")
             LoginScreen(loginViewModel, navController)
         }
         composable("passport") {
