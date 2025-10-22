@@ -17,7 +17,7 @@ class LoginViewModel : ViewModel() {
                 popUpTo("login") { inclusive = true }
             }
         } else {
-            loginError.value = "Usuario o contraseña incorrectos"
+            loginError.value = "Algo esta mal en el inicio de sesión"
         }
     }
 }
