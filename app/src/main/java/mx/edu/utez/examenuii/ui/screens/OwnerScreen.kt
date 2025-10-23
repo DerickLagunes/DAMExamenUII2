@@ -10,22 +10,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import mx.edu.utez.examenuii.ui.components.PassportList
+import mx.edu.utez.examenuii.ui.components.OwnerList
 import mx.edu.utez.examenuii.ui.components.texts.Label
-import mx.edu.utez.examenuii.viewmodel.PassportViewModel
+import mx.edu.utez.examenuii.viewmodel.OwnerViewModel
 
 @Composable
-fun PassportScreen(viewModel: PassportViewModel, navController: NavController){
+fun OwnerScreen(viewModel: OwnerViewModel, navController: NavController){
     Column (
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.padding(999.dp)
     ) {
         Title("Pasaportes registrados")
-        val pasaportes by viewModel.passports.collectAsStateWithLifecycle()
-        PassportList(pasaportes) { passport ->
-            viewModel.clickPassport(passport)
-            navController.navigate("stampas")
+        val duenos by viewModel.owners.collectAsStateWithLifecycle()
+        OwnerList(duenos) { dueno ->
+            viewModel.clickPassport(dueno)
+            navController.navigate("mascotas")
         }
-        Label("No hay más pasaportes")
+        Label("No hay más dueños")
     }
 }

@@ -15,10 +15,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             ExamenUIITheme {
                 Navigation()
-                //Punto: Separa los componentes individuales de PassportCard y StampScreen en diferentes archivos dentro de UI
-                //Punto: Genera 4 pasaportes con distintos datos entre ellos (observa la estructura de Passport.kt)
-                //Punto: Al dar click en un pasaporte se presentan las estampas de los lugares que ha visitado las personas,
-                //       cambia la estructura de datos de Stamp para incluir: fecha de ingreso al país y fecha de salida
+                //Punto: Separa los componentes individuales de OwnerCard y PetScreen en diferentes archivos dentro de UI
+                //Punto: Genera 4 dueños con distintos datos entre ellos (observa la estructura de Owner.kt)
+                //Punto: Al dar click en un dueño se presentan las mascotas que tienen,
+                //       cambia la estructura de datos de Pet para incluir:
+                //       edad de la mascota
+                //       raza de la mascota
+                //       fecha de nacimiento de la mascota
                 //       Configura la vista para incluir esa nueva información
             }
         }

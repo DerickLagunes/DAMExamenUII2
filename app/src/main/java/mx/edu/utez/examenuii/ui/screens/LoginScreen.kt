@@ -56,7 +56,7 @@ fun LoginScreen(viewModel: LoginViewModel, navController: NavController) {
         }
 
         Link("¿Has olvidado la contraseña?") {
-            navController.navigate("forgot_password")
+            navController.navigate("login")
         }
 
         PrimaryButton("Iniciar sesión") {
@@ -64,7 +64,7 @@ fun LoginScreen(viewModel: LoginViewModel, navController: NavController) {
         }
 
         Link("¿No tienes cuenta? Regístrate") {
-            navController.navigate("register")
+            navController.navigate("login")
         }
 
     }

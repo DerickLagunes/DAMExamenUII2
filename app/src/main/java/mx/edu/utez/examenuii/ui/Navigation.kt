@@ -6,17 +6,17 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import mx.edu.utez.examenuii.ui.screens.LoginScreen
-import mx.edu.utez.examenuii.ui.screens.PassportScreen
-import mx.edu.utez.examenuii.ui.screens.StampScreen
-import mx.edu.utez.examenuii.viewmodel.PassportViewModel
+import mx.edu.utez.examenuii.ui.screens.PetScreen
+import mx.edu.utez.examenuii.ui.screens.OwnerScreen
 import mx.edu.utez.examenuii.viewmodel.LoginViewModel
+import mx.edu.utez.examenuii.viewmodel.OwnerViewModel
 
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
 
     val loginViewModel: LoginViewModel = viewModel()
-    val passportViewModel: PassportViewModel = viewModel()
+    val ownerViewModel: OwnerViewModel = viewModel()
 
     NavHost(navController = navController, startDestination = "login") {
         composable("login") {
@@ -25,11 +25,11 @@ fun Navigation() {
                     "elimina la linea que genra la excepción")
             LoginScreen(loginViewModel, navController)
         }
-        composable("passport") {
-            PassportScreen(passportViewModel, navController)
+        composable("owner") {
+            OwnerScreen(ownerViewModel, navController)
         }
-        composable("stamp") {
-            StampScreen(passportViewModel, navController)
+        composable("pet") {
+            PetScreen(ownerViewModel, navController)
         }
     }
 }

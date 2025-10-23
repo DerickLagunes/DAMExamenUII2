@@ -5,16 +5,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import mx.edu.utez.examenuii.data.model.Passport
+import mx.edu.utez.examenuii.data.model.Owner
 
 @Composable
-fun PassportList(lista: List<Passport>, x: (Passport) -> Unit) {
+fun OwnerList(lista: List<Owner>, x: (Owner) -> Unit) {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(999.dp)
     ) {
-        items(items = lista, key = {it.id} ) {passport ->
-            PassportCard(passport,x)
+        items(items = lista, key = {it.id} ) {owner ->
+            OwnerCard(owner,x)
         }
     }
 }
