@@ -29,9 +29,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import mx.edu.utez.examenuii.R
 import mx.edu.utez.examenuii.data.model.Owner
+import mx.edu.utez.examenuii.data.model.Pet
 
 //Punto: Separa los componentes individuales a archivos dentro de UI
 @Composable
